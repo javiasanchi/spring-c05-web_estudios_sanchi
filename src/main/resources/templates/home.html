@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,5 +9,11 @@
 </head>
 <body>
 <h1>Web Gestión Mercados</h1>
+<ul>
+    <li th:text ="${Cabecera}"></li>
+    <li th:each ="mercado :${mercados}">
+        <span th:text="${mercado.nombre}"></span>
+    </li>
+</ul>
 </body>
 </html>

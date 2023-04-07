@@ -17,6 +17,7 @@ public class Mercado {
     private Long id;
     private String nombre;
     private String cif;
+    private Integer numPuestos;
 
 
 }
