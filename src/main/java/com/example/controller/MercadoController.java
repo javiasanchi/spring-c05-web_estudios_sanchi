@@ -1,8 +1,12 @@
 package com.example.controller;
 
+import com.example.entities.Mercado;
 import com.example.service.MercadoService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 @Controller
 public class MercadoController {
@@ -14,7 +18,10 @@ public class MercadoController {
     }
 
     @GetMapping("/home")
-    public String home (){
+    public String home (Model model){
+        List<Mercado> mercados = mercadoService.findAll();
+        model.addAttribute("mensaje","Listado de mercados de Alcorcón ");
+        model.addAttribute("mercado", mercados);
         return "home";
     }
 }
