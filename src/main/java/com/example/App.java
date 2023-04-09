@@ -20,8 +20,10 @@ public class App {
 		Mercado mer1 = new Mercado(null, "Veracruz","G92009639",10,true);
 		Mercado mer2 = new Mercado(null, "Colón","F59030725",12,false);
 		Mercado mer3 = new Mercado(null, "Mayesi","B73062730",12,true);
+		Mercado mer4 = new Mercado(null, "Valderas","C53597465",10,true);
+		Mercado mer5 = new Mercado(null, "Ondarreta","G93074197",12,true);
 
-		mercadoRepo.saveAll(List.of(mer1,mer2,mer3));
+		mercadoRepo.saveAll(List.of(mer1,mer2,mer3,mer4,mer5));
 
 		}
 	}

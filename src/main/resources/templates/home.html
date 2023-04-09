@@ -61,6 +61,7 @@
                     <td th:text="${mercado.nombre}"></td>
                     <td th:text="${mercado.cif}"></td>
                     <td th:text="${mercado.numPuestos}"></td>
+                    <td th:text="${mercado.abierta}"></td>
                     <td>
                         <a class="btn btn-primary" th:href="@{/mercados/{id}(id=${mercado.id})}">Ver</a>
                         <button type="button" class="btn btn-success">Editar</button>

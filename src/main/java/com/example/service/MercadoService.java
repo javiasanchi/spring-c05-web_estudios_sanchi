@@ -3,8 +3,10 @@ package com.example.service;
 import com.example.entities.Mercado;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MercadoService {
     List<Mercado> findAll();
+    Optional<Mercado> findById(Long id);
 
 }
