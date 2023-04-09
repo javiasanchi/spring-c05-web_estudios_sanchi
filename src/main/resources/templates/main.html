@@ -6,16 +6,39 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
 </head>
 <body>
 <p th:text="${mensaje}"></p>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cif</th>
+        <th scope="col">Puestos</th>
+        <th scope="col">Abierto</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="mercado:${mercados}">
+        <th th:text="${mercado.id}"></th>
+        <th th:text="${mercado.nombre}"></th>
+        <th th:text="${mercado.cif}"></th>
+        <th th:text="${mercado.numPuestos}"></th>
+        <th th:text="${mercado.abierta}"></th>
+    </tr>
+    </tbody>
+</table>
 <ul>
-
     <li th:each="mercado:${mercados}">
         <span th:text="${mercado.nombre}"></span>
         <span th:text="${mercado.cif}"></span>
         <span th:text="${mercado.numPuestos}"></span>
+        <span th:text="${mercado.abierta}"></span>
     </li>
 </ul>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
