@@ -8,5 +8,7 @@ import java.util.Optional;
 public interface MercadoService {
     List<Mercado> findAll();
     Optional<Mercado> findById(Long id);
+    Mercado save (Mercado mercado);
+    void  deleteById (Long id);
 
 }

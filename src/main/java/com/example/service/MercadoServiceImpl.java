@@ -25,4 +25,14 @@ public class MercadoServiceImpl implements MercadoService {
         log.info("Encontrar por id findById{}", id);
         return mercadoRepo.findById(id);
     }
+
+    @Override
+    public Mercado save(Mercado mercado) {
+        return mercadoRepo.save(mercado);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        mercadoRepo.deleteById(id);
+    }
 }
