@@ -16,6 +16,7 @@ public class Mercado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    private String descripcion;
     private String cif;
     private Integer numPuestos;
     private Boolean abierto;

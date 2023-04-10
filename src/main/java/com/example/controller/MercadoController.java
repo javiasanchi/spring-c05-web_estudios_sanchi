@@ -17,23 +17,22 @@ public class MercadoController {
     private final MercadoService mercadoService;
 
     @GetMapping("/main")
-    public String main (Model model){
+    public String findAll (Model model){
         List<Mercado> mercados = mercadoService.findAll();
         model.addAttribute("mensaje","Listado de mercados de Alcorcón");
         model.addAttribute("mercados", mercados);
 
         return "main";
     }
-    @GetMapping("/main{id}")
-    public String mercado (Model model, @PathVariable Long id){
+    @GetMapping("/main/{id}")
+    public String findById (Model model, @PathVariable Long id){
         Optional<Mercado> mercaOpt = mercadoService.findById(id);
         if (mercaOpt.isPresent()) {
-            model.addAttribute("mercados", mercaOpt.get());
+            model.addAttribute("mercado", mercaOpt.get());
         }
         else {
             model.addAttribute("error","No se pudo cargar el mercado");
         }
-
         return "info";
     }
 

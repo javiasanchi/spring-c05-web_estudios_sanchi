@@ -23,39 +23,34 @@
                 <a class="nav-link" href="#">Mercados</a>
                 <a class="nav-link" href="#">Tiendas</a>
                 <a class="nav-link" href="#">Productos</a>
-
             </div>
         </div>
     </div>
 </nav>
 <div class="container text-center">
     <div class="row">
-        <h1 class="mt-3">Detalle de Mercado</h1>
-        <div class="col mt-3">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cif</th>
-                    <th scope="col">Puestos</th>
-                    <th scope="col">Abierto</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td th:text="${mercado.nombre}"></td>
-                    <td th:text="${mercado.cif}"></td>
-                    <td th:text="${mercado.numPuestos}"></td>
-                    <td th:text="${mercado.abierto}"></td>
-                    <td>
-                        <button type="button" class="btn btn-primary">Ver</button>
-                        <button type="button" class="btn btn-secondary">Editar</button>
-                        <button type="button" class="btn btn-success">Borrar</button>
-
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+        <h3>Detalle de mercado</h3>
+        <div class="col">
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="#" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${mercado.nombre}"></h5>
+                    <p class="card-text" th:text="${mercado.descripcion}" ></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" th:text="${mercado.cif}" ></li>
+                    <li class="list-group-item"th:text="| Tiene ${mercado.numPuestos} puestos|" ></li>
+                    <li class="list-group-item"th:text="${mercado.abierto}"  ></li>
+                </ul>
+                <div class="card-body">
+                    <button type="button" class="btn btn-primary">Volver</button>
+                    <button type="button" class="btn btn-success">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
         </div>
     </div>
 </div>
