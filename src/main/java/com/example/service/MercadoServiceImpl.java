@@ -17,11 +17,12 @@ public class MercadoServiceImpl implements MercadoService {
     @Override
     public List<Mercado> findAll() {
         log.info("Encontrar todos los mercados findAll()");
-        return this.mercadoRepo.findAll();
+        return mercadoRepo.findAll();
     }
 
     @Override
     public Optional<Mercado> findById(Long id) {
-        return Optional.empty();
+        log.info("Encontrar por id findById{}", id);
+        return mercadoRepo.findById(id);
     }
 }
