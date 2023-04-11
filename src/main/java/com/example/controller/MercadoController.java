@@ -27,14 +27,15 @@ public class MercadoController {
     @GetMapping("/main/{id}")
     public String findById (Model model, @PathVariable Long id){
         Optional<Mercado> mercaOpt = mercadoService.findById(id);
-        if (mercaOpt.isPresent()) {
+        if (mercaOpt.isPresent())
             model.addAttribute("mercado", mercaOpt.get());
+
+        else
+            model.addAttribute("error","MERCADO NO EXISTE O NO SE ENCUENTRA");
+                return "info";
         }
-        else {
-            model.addAttribute("error","No se pudo cargar el mercado");
-        }
-        return "info";
+
     }
 
-}
+
 

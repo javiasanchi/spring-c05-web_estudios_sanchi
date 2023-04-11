@@ -33,7 +33,13 @@
         <div class="col">
         </div>
         <div class="col">
-            <div class="card">
+            <div th:if="${error}">
+                <div class="alert alert-danger" role="alert" >
+                    <p th:text="${error}"></p>
+                </div>
+                <a class="btn btn-primary" th:href="@{/main}">Volver</a>
+            </div>
+            <div class="card" th:if="${error}== null">
                 <img src="#" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${mercado.nombre}"></h5>
@@ -45,7 +51,7 @@
                     <li class="list-group-item"th:text="${mercado.abierto}"  ></li>
                 </ul>
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary">Volver</button>
+                    <a type="button" class="btn btn-primary" th:href="@{/main}">Volver</a>
                     <button type="button" class="btn btn-success">Comprar</button>
                 </div>
             </div>
