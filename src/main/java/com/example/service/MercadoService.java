@@ -10,5 +10,7 @@ public interface MercadoService {
     Optional<Mercado> findById(Long id);
     Mercado save (Mercado mercado);
     void  deleteById (Long id);
+    List<Mercado> findByNumPuestos(Integer numPuestos);
+
 
 }

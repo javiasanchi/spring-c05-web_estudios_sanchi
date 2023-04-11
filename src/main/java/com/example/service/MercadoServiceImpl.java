@@ -35,4 +35,9 @@ public class MercadoServiceImpl implements MercadoService {
     public void deleteById(Long id) {
         mercadoRepo.deleteById(id);
     }
+
+    @Override
+    public List<Mercado> findByNumPuestos(Integer puestos) {
+        return mercadoRepo.findByNumPuestos(puestos);
+    }
 }

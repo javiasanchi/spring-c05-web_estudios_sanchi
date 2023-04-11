@@ -34,6 +34,12 @@ public class MercadoController {
             model.addAttribute("error","MERCADO NO EXISTE O NO SE ENCUENTRA");
                 return "info";
         }
+        @GetMapping("main/numpuestos/{numPuestos}")
+                public String findByNumPuestos (Model model, @PathVariable Integer numPuestos);
+    List<Mercado> numPuestos = mercadoService.findByNumPuestos(Integer numPuestos);
+
+
+
 
     }
 
