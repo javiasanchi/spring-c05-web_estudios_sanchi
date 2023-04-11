@@ -8,7 +8,8 @@ import java.util.List;
 
 public interface MercadoRepository extends JpaRepository<Mercado, Long> {
 
-    List<Mercado> findByNumPuestos(Integer numPuestos);
+    List<Mercado> findAllByNumPuestos(Integer numPuestos);
+    List<Mercado> findAllByCiudad(String ciudad);
 
 
 }

@@ -28,6 +28,7 @@ public class MercadoServiceImpl implements MercadoService {
 
     @Override
     public Mercado save(Mercado mercado) {
+        log.error("No se pudo guardar mercado {}", mercado);
         return mercadoRepo.save(mercado);
     }
 
@@ -37,7 +38,12 @@ public class MercadoServiceImpl implements MercadoService {
     }
 
     @Override
-    public List<Mercado> findByNumPuestos(Integer puestos) {
-        return mercadoRepo.findByNumPuestos(puestos);
+    public List<Mercado> findAllByNumPuestos(Integer puestos) {
+        return mercadoRepo.findAllByNumPuestos(puestos);
+    }
+
+    @Override
+    public List<Mercado> findAllByCiudad(String ciudad) {
+        return mercadoRepo.findAllByCiudad(ciudad);
     }
 }

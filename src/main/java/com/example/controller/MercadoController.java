@@ -34,6 +34,13 @@ public class MercadoController {
             model.addAttribute("error","MERCADO NO EXISTE O NO SE ENCUENTRA");
                 return "info";
         }
+        @GetMapping("/main/ciudad/{ciudad}")
+    public String findByCiudad (Model model, @PathVariable String ciudad) {
+        model.addAttribute("mercado" , mercadoService.findAllByCiudad(ciudad));
+        return "main";
+        }
+
+
 
 
 

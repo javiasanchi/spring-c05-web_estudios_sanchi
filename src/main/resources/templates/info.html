@@ -31,7 +31,7 @@
                     <p class="card-text" th:text="${mercado.descripcion}" ></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" th:text="${mercado.cif}" ></li>
+                    <li class="list-group-item" th:text="| Situado en ${mercado.ciudad}|" ></li>
                     <li class="list-group-item"th:text="| Tiene ${mercado.numPuestos} puestos|" ></li>
                     <li class="list-group-item"th:text="${mercado.abierto}"  ></li>
                 </ul>

@@ -17,14 +17,18 @@ public class App {
 
 
 
-		Mercado mer1 = new Mercado(null, "Veracruz","descripcion","G92009639",10,true);
-		Mercado mer2 = new Mercado(null, "Colón","descripcion","F59030725",12,false);
-		Mercado mer3 = new Mercado(null, "Mayesi","descripcion","B73062730",12,true);
-		Mercado mer4 = new Mercado(null, "Valderas","descripcion","C53597465",10,true);
-		Mercado mer5 = new Mercado(null, "Ondarreta","descripcion","G93074197",12,true);
+		Mercado mer1 = new Mercado(null, "Veracruz","descripcion","Alcorcon","G92009639",10,true);
+		Mercado mer2 = new Mercado(null, "Colón","descripcion","Alcorcon","F59030725",12,false);
+		Mercado mer3 = new Mercado(null, "Mayesi","descripcion","Alcorcon","B73062730",12,true);
+		Mercado mer4 = new Mercado(null, "Valderas","descripcion","Alcorcon","C53597465",10,true);
+		Mercado mer5 = new Mercado(null, "Ondarreta","descripcion","Alcorcon","G93074197",12,true);
+		Mercado mer6= new Mercado (null,"Rio Genil","descripción","Mostoles","M63739057",10,true);
+		Mercado mer7= new Mercado(null,"Constitución","descripción","Mostoles","M49043921",10,true);
+		Mercado mer8= new Mercado(null,"Cuatrocaminos","descripción","Mostoles","M40518306",14,true);
+		Mercado mer9= new Mercado(null,"Plaza del Turia","descripción","Mostoles","M05800276",12,true);
+		Mercado mer10= new Mercado(null,"Centro Iviasa","descripción","Mostoles","M64943832",12,false);
 
-
-		mercadoRepo.saveAll(List.of(mer1,mer2,mer3,mer4,mer5));
+		mercadoRepo.saveAll(List.of(mer1,mer2,mer3,mer4,mer5,mer6,mer7,mer8,mer9,mer10));
 
 		}
 	}

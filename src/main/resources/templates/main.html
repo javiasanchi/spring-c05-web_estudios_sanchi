@@ -20,7 +20,7 @@
                 <tr>
                     <th scope="col">Nombre</th>
                     <th scope="col">Descripcion</th>
-                    <th scope="col">Cif</th>
+                    <th scope="col">Ciudad</th>
                     <th scope="col">Puestos</th>
                     <th scope="col">Abierto</th>
                 </tr>
@@ -29,7 +29,7 @@
                 <tr th:each="mercado:${mercados}">
                     <td th:text="${mercado.nombre}"></td>
                     <td th:text="${mercado.descripcion}"></td>
-                    <td th:text="${mercado.cif}"></td>
+                    <td th:text="${mercado.ciudad}"></td>
                     <td th:text="${mercado.numPuestos}"></td>
                     <td th:text="${mercado.abierto}"></td>
                     <td>
