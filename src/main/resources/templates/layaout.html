@@ -1,16 +1,23 @@
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Untitled</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <body>
-<footer class="bd-footer py-4 py-md-5 mt-5 bg-light">
+<nav class="navbar navbar-expand-lg bg-light" th:fragment="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">GestMer</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        <a class="nav-link" href="#">Mercados</a>
+        <a class="nav-link" href="#">Tiendas</a>
+        <a class="nav-link" href="#">Productos</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<footer class="bd-footer py-4 py-md-5 mt-5 bg-light" th:fragment="footer">
   <div class="container py-4 py-md-5 px-4 px-md-3">
     <div class="row">
       <div class="col-lg-3 mb-3">
@@ -69,10 +76,5 @@
     </div>
   </div>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
-
-<!-- Credit to https://epicbootstrap.com/snippets/footer-with-columns -->
