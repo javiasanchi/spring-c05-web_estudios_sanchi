@@ -39,6 +39,12 @@ public class MercadoController {
         model.addAttribute("mercado" , mercadoService.findAllByCiudad(ciudad));
         return "main";
         }
+        @GetMapping("main/crear/")
+    public String crear (Model model){
+        model.addAttribute("mercado", new Mercado());
+        return "formulario";
+        }
+
 
 
 

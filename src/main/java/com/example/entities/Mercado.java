@@ -17,6 +17,10 @@ public class Mercado {
     private Long id;
     private String nombre;
     private String descripcion;
+    @Column(length = 9)
+    private Integer telefono;
+    @Column(unique = true)
+    private String email;
     private String ciudad;
     private String cif;
     private Integer numPuestos;
