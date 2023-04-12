@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,7 @@ import java.util.Optional;
 public class MercadoController {
     private final MercadoService mercadoService;
 
-    @GetMapping("/main")
+    @GetMapping("main")
     public String findAll (Model model){
         List<Mercado> mercados = mercadoService.findAll();
         model.addAttribute("mensaje","Listado de mercados de Alcorcón");
@@ -24,7 +25,7 @@ public class MercadoController {
 
         return "main";
     }
-    @GetMapping("/main/{id}")
+    @GetMapping("main/{id}")
     public String findById (Model model, @PathVariable Long id){
         Optional<Mercado> mercaOpt = mercadoService.findById(id);
         if (mercaOpt.isPresent())
@@ -34,16 +35,17 @@ public class MercadoController {
             model.addAttribute("error","MERCADO NO EXISTE O NO SE ENCUENTRA");
                 return "info";
         }
-        @GetMapping("/main/ciudad/{ciudad}")
+        @GetMapping("main/ciudad/{ciudad}")
     public String findByCiudad (Model model, @PathVariable String ciudad) {
-        model.addAttribute("mercado" , mercadoService.findAllByCiudad(ciudad));
+        model.addAttribute("mercados" , mercadoService.findAllByCiudad(ciudad));
         return "main";
         }
-        @GetMapping("main/crear/")
+        @GetMapping("main/crear")
     public String crear (Model model){
         model.addAttribute("mercado", new Mercado());
         return "formulario";
         }
+       // @PostMapping()
 
 
 

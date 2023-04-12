@@ -24,22 +24,34 @@
                 </div>
                 <a class="btn btn-primary" th:href="@{/main}">Volver</a>
             </div>
-            <form th:text="${error} == null" th:action="@{/main}" method="POST" th:object="@{/mercado}">
+            <form th:text="${error} == null" th:action="@{/main}" method="POST" th:object="${mercado}">
 
-                <input type="hidden" id="id" name="id" th:field="*{id}">
+                <input type="hidden" id="id" name="id" th:field="*{id}"/>
+
 
                 <div class="mb-3">
-                    <label for="Mercado" class="form-label">Mercado</label>
-                    <input type="text" class="form-control" id="Mercado" >
-                    <div id="emailHelp" class="form-text"></div>
+                    <label for="nombre" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}" >
                 </div>
+
                 <div class="mb-3">
-                    <label for="Ciudad" class="form-label">Ciudad</label>
-                    <input type="text" class="form-control" id="Ciudad">
+                    <label for="telefono" class="form-label">Category</label>
+                    <input type="tel" class="form-control" id="telefono" th:field="*{telefono}">
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="text" class="form-check-input" id="Puestos">
-                    <label class="form-check-label" for="Puestos">Número de puestos</label>
+
+                <div class="mb-3">
+                    <label for="ciudad" class="form-label">Color</label>
+                    <input type="text" class="form-control" id="ciudad" th:field="*{ciudad}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <textarea class="form-control" id="descripcion" rows="3" th:field="*{descripcion}"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="numPuestos" class="form-label">Price (€)</label>
+                    <input type="number" step="0.01" class="form-control" id="numPuestos" th:field="*{numPuestos}">
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
