@@ -17,8 +17,7 @@
         <div class="col mt-3">
             <div style="text-align: left">
                 <a class="btn btn-info" th:href="@{/main/crear}">Crear nuevo mercado</a>
-               <!--<button type="button" class="btn btn-secondary">Crear </button>-->
-               <button type="button" class="btn btn-danger">Borrar </button>
+
             </div>
 
             <table class="mt-2 table">
@@ -44,8 +43,8 @@
                     <td th:text="${mercado.abierto}"></td>
                     <td>
                         <a type="button" class="btn btn-primary" th:href="@{/main/{id}(id=${mercado.id})}">Ver</a>
-                        <button type="button" class="btn btn-secondary">Editar</button>
-                        <button type="button" class="btn btn-success">Borrar</button>
+                        <a class="btn btn-success" th:href="@{/main/{id}/editar(id=${mercado.id})}">Editar</a>
+                        <a class="btn btn-danger" th:href="@{/main/{id}/borrar(id=${mercado.id})}">Borrar</a>
 
                     </td>
                 </tr>

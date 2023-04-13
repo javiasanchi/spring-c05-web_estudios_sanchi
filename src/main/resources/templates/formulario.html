@@ -23,9 +23,9 @@
                 <div class="alert alert-danger" role="alert" >
                     <p th:text="${error}"></p>
                 </div>
-                <a class="btn btn-primary" th:href="@{/main}">Volver</a>
+
             </div>
-            <form th:text="${error} == null" th:action="@{/main}" method="POST" th:object="${mercado}">
+            <form th:if="${error} == null" th:action="@{/main}" method="POST" th:object="${mercado}">
 
                 <input type="hidden" id="id" name="id" th:field="*{id}"/>
 
@@ -54,8 +54,11 @@
                     <label for="numPuestos" class="form-label">Número de Puestos</label>
                     <input type="number" step="0.01" class="form-control" id="numPuestos" th:field="*{numPuestos}">
                 </div>
+                <a class="btn btn-danger" th:href="@{/main}">Cancelar</a>
+                <a class="btn btn-primary" th:href="@{/main}">Volver</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
+
         </div>
         <div class="col">
         </div>

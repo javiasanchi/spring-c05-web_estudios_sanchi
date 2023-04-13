@@ -30,7 +30,7 @@ public class MercadoController {
     public String findById (Model model, @PathVariable Long id){
         Optional<Mercado> mercaOpt = mercadoService.findById(id);
         if (mercaOpt.isPresent())
-            model.addAttribute("mercado", mercaOpt.get());
+            model.addAttribute("mercados", mercaOpt.get());
 
         else
             model.addAttribute("error","MERCADO NO EXISTE O NO SE ENCUENTRA");
@@ -38,10 +38,10 @@ public class MercadoController {
         }
         @GetMapping("main/ciudad/{ciudad}")
     public String findByCiudad (Model model, @PathVariable String ciudad) {
-        model.addAttribute("mercados" , mercadoService.findAllByCiudad(ciudad));
+        model.addAttribute("mercado" , mercadoService.findAllByCiudad(ciudad));
         return "main";
         }
-        @GetMapping("main/crear/")
+        @GetMapping("main/crear")
     public String crear (Model model){
         model.addAttribute("mercado", new Mercado());
         return "formulario";
@@ -54,7 +54,7 @@ public class MercadoController {
         else
             model.addAttribute("error", "Mercado no se encuentra o no existe");
 
-        return "food-form";
+        return "formulario";
     }
 
     @PostMapping("main") // POST http://localhost:8080/foods
@@ -66,17 +66,8 @@ public class MercadoController {
     @GetMapping("main/{id}/borrar")
     public String deleteById(@PathVariable Long id) {
         mercadoService.deleteById(id);
-        return "redirect:/foods";
+        return "redirect:/main";
     }
-
-
-
-
-
-
-
-
-
 
 }
 
