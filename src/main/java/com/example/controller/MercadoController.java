@@ -30,7 +30,7 @@ public class MercadoController {
     public String findById (Model model, @PathVariable Long id){
         Optional<Mercado> mercaOpt = mercadoService.findById(id);
         if (mercaOpt.isPresent())
-            model.addAttribute("mercados", mercaOpt.get());
+            model.addAttribute("mercado", mercaOpt.get());
 
         else
             model.addAttribute("error","MERCADO NO EXISTE O NO SE ENCUENTRA");
