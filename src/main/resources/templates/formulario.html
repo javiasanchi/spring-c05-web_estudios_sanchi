@@ -30,17 +30,17 @@
 
 
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Name</label>
+                    <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" th:field="*{nombre}" >
                 </div>
 
                 <div class="mb-3">
-                    <label for="telefono" class="form-label">Category</label>
+                    <label for="telefono" class="form-label">Teléfono</label>
                     <input type="tel" class="form-control" id="telefono" th:field="*{telefono}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="ciudad" class="form-label">Color</label>
+                    <label for="ciudad" class="form-label">Ciudad</label>
                     <input type="text" class="form-control" id="ciudad" th:field="*{ciudad}">
                 </div>
 
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="numPuestos" class="form-label">Price (€)</label>
+                    <label for="numPuestos" class="form-label">Número de Puestos</label>
                     <input type="number" step="0.01" class="form-control" id="numPuestos" th:field="*{numPuestos}">
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -61,8 +61,8 @@
     </div>
 </div>
 <div th:replace="~{layaout :: footer}"></div>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
