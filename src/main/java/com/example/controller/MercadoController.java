@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -40,20 +41,44 @@ public class MercadoController {
         model.addAttribute("mercados" , mercadoService.findAllByCiudad(ciudad));
         return "main";
         }
-        @PostMapping("main/crear/")
+        @GetMapping("main/crear/")
     public String crear (Model model){
         model.addAttribute("mercado", new Mercado());
         return "formulario";
         }
+    @GetMapping("main/{id}/editar")
+    public String editForm(Model model, @PathVariable Long id) {
+        Optional<Mercado> mercadoOp = mercadoService.findById(id);
+        if (mercadoOp.isPresent())
+            model.addAttribute("mercado", mercadoOp.get());
+        else
+            model.addAttribute("error", "Mercado no se encuentra o no existe");
 
-
-
-
-
-
-
-
+        return "food-form";
     }
+
+    @PostMapping("main") // POST http://localhost:8080/foods
+    public String saveForm(@ModelAttribute Mercado mercado) {
+        mercadoService.save(mercado);
+        return "redirect:/main"; // Redirección a GET /foods
+    }
+
+    @GetMapping("main/{id}/borrar")
+    public String deleteById(@PathVariable Long id) {
+        mercadoService.deleteById(id);
+        return "redirect:/foods";
+    }
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
